@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西山敬祐の自己紹介</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== Google Fontと基本設定 ===== */
+        body {
+            /* Google Font 'Poppins' を適用 */
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a1a; /* 非常に濃いネイビーの背景でネオンを際立たせる */
+            color: #f0f0f0; /* 非常に明るいグレーの文字色 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* ===== 自己紹介カードのコンテナ ===== */
+        .container {
+            background-color: rgba(31, 31, 56, 0.7); /* 半透明で背景の暗さを活かす */
+            padding: 40px;
+            border-radius: 20px; /* 角を丸くする */
+            border: 2px solid #00e5ff; /* より太いネオンカラーの枠線 */
+            max-width: 800px;
+            width: 100%;
+            /* より強いネオン風の影 */
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.7), 0 0 40px rgba(0, 229, 255, 0.5), 0 0 60px rgba(0, 229, 255, 0.3);
+            
+            /* フェードインアニメーション */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.2s forwards; /* アニメーション時間を少し長く */
+        }
+
+        h1 {
+            font-size: 3em; /* より大きく */
+            color: #fff;
+            text-align: center;
+            margin-bottom: 0;
+            /* より強力なネオン風の文字の陰 */
+            text-shadow: 0 0 10px #fff, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700; /* 黄色のネオンを強調 */
+        }
+
+        .job-title {
+            color: #88eeff; /* より明るいネオンブルー */
+            text-align: center;
+            margin-top: 5px;
+            font-size: 1.3em;
+            text-shadow: 0 0 5px #88eeff, 0 0 10px #88eeff; /* ジョブタイトルにもネオンの影 */
+        }
+
+        h2 {
+            font-size: 2em; /* より大きく */
+            color: #f0f0f0;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #4D94FF; /* より太い青色の下線 */
+            padding-bottom: 8px;
+            text-align: center;
+            text-shadow: 0 0 8px #4D94FF; /* H2にもネオンの影 */
+        }
+
+        p {
+            color: #e0e0e0;
+            line-height: 1.8; /* 行の高さを広げ読みやすく */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* ===== リストアイテム (実績と経緯) ===== */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        li {
+            background-color: rgba(77, 148, 255, 0.15); /* より透過度が高く光る青色の背景 */
+            padding: 15px;
+            margin-bottom: 12px; /* 間隔を少し広く */
+            border-radius: 8px;
+            border-left: 6px solid #4D94FF; /* より太い青色の左枠線 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            color: #f0f0f0; /* リスト内の文字色 */
+        }
+
+        /* マウスを乗せたら少し浮き上がって強く光る */
+        li:hover {
+            transform: translateY(-8px); /* より大きく浮き上がる */
+            box-shadow: 0 8px 25px rgba(77, 148, 255, 0.6); /* より強く光る */
+        }
+
+        /* ===== ボタンコンテナ ===== */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* ボタン間のスペースを広く */
+            margin: 40px 0;
+        }
+
+        /* ===== ボタン ===== */
+        .button-container button {
+            padding: 18px 35px; /* ボタンをさらに大きく */
+            font-size: 18px; /* 文字サイズも大きく */
+            border: 2px solid #00e5ff; /* ネオンの枠線 */
+            border-radius: 50px; /* 丸いボタン */
+            background-color: transparent; /* 背景を透明に */
+            color: #00e5ff; /* ネオンカラーの文字色 */
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00e5ff; /* ボタンの文字にもネオンの影 */
+        }
+
+        .button-container button:hover {
+            background-color: rgba(0, 229, 255, 0.15); /* ホバー時にうっすら背景色 */
+            transform: scale(1.1); /* より大きく拡大 */
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.8), inset 0 0 10px rgba(0, 229, 255, 0.5); /* 内外に強いネオンの光 */
+            color: #fff; /* ホバーで文字も白く光る */
+        }
+
+        /* ===== リンク（SNS） ===== */
+        a {
+            background-color: transparent; /* 背景を透明に */
+            border: 2px solid #00e5ff; /* ネオンの枠線 */
+            color: #00e5ff; /* ネオンカラーの文字色 */
+            padding: 12px 25px;
+            border-radius: 50px; /* 丸いリンク */
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.4s ease;
+            margin-top: 20px;
+            text-shadow: 0 0 5px #00e5ff; /* リンクの文字にもネオンの影 */
+        }
+
+        /* マウスを乗せたら少し大きくなり強く光る */
+        a:hover {
+            transform: scale(1.15); /* より大きく拡大 */
+            box-shadow: 0 0 30px rgba(77, 148, 255, 0.8), inset 0 0 10px rgba(77, 148, 255, 0.5); /* 内外に強いネオンの光 */
+            color: #fff; /* ホバーで文字も白く光る */
+        }
+
+        /* ===== アニメーションの定義 ===== */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== リスト内のリンク用の追加スタイル ===== */
+        li a {
+            text-decoration: none;
+            color: inherit;
+            background-color: transparent;
+            padding: 0;
+            font-weight: normal;
+            display: inline;
+            transition: none;
+            text-shadow: none; /* リスト内のリンクはネオンシャドウなし */
+            border: none; /* リスト内のリンクは枠線なし */
+        }
+
+        /* リスト内のリンクにマウスを乗せたときのスタイル */
+        li a:hover {
+            text-decoration: underline;
+            color: #FFEC00; /* より鮮やかなネオンイエロー */
+            transform: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>西山敬祐</h1>
+        <p class="job-title">ITプログラマー専攻</p>
+
+        <h2>自己紹介</h2>
+        <p>はじめまして！京都デザイン＆テクノロジー専門学校で学習している西山敬祐です！</p>
+
+        <h2>これまでの実績と経緯</h2>
+        <ul>
+            
+        </ul>
+
+        <div class="button-container">
+            <button onclick="location.href=' http://127.0.0.1:8000/schedule'">制作マイカレンダー</button>
+            <button onclick="location.href='プロジェクトのリンク先をここに入力.html'">授業</button>
+            <button onclick="location.href='制作のリンク先をここに入力.html'">特別講義</button>
+        </div>
+        
+        <h2>SNS</h2>
+        <p>よろしければ、SNSもご覧ください!(^^)!</p>
+        <a href="https://www.instagram.com/keisuke4884?igsh=Nnk0M3hmeWxlMHE2&utm_source=qr" target="_blank">Instagram</a>
+    </div>
+
+</body>
+</html>
